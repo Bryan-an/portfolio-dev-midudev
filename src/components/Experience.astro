@@ -1,0 +1,51 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+  {
+    title: 'Front-End Developer',
+    description:
+      'Developed and maintained responsive and user-friendly websites. Collaborated with UI/UX designers to implement design concepts. Utilized HTML, CSS, and JavaScript to enhance website interactivity.',
+    link: 'https://example-portfolio.com/front-end-developer',
+    date: 'January 2020 - June 2021',
+  },
+  {
+    title: 'Content Creator Intern',
+    description:
+      'Produced engaging blog posts and social media content. Conducted market research to identify trending topics. Utilized SEO strategies to improve content visibility and engagement.',
+    link: 'https://example-portfolio.com/content-creator-intern',
+    date: 'May 2019 - August 2019',
+  },
+  {
+    title: 'Full-Stack Developer',
+    description:
+      'Worked on end-to-end development of web applications. Collaborated with cross-functional teams to implement new features. Utilized technologies such as Node.js, Express, React, and MongoDB.',
+    link: 'https://example-portfolio.com/full-stack-developer',
+    date: 'September 2018 - December 2019',
+  },
+  {
+    title: 'Digital Marketing Specialist',
+    description:
+      'Executed digital marketing campaigns across various channels. Analyzed campaign performance metrics and adjusted strategies for optimal results. Managed social media accounts and conducted audience engagement.',
+    link: 'https://example-portfolio.com/digital-marketing-specialist',
+    date: 'March 2017 - July 2018',
+  },
+  {
+    title: 'Freelance Web Designer',
+    description:
+      'Provided custom website design services for clients in diverse industries. Translated client requirements into visually appealing and functional websites. Utilized tools such as Photoshop and Illustrator for design.',
+    link: 'https://example-portfolio.com/freelance-web-designer',
+    date: 'January 2016 - December 2016',
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-2">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

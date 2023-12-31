@@ -1,0 +1,169 @@
+---
+import AngularIcon from '../icons/AngularIcon.astro';
+import AxiosIcon from '../icons/AxiosIcon.astro';
+import CssIcon from '../icons/CssIcon.astro';
+import ExpressIcon from '../icons/ExpressIcon.astro';
+import FirebaseIcon from '../icons/FirebaseIcon.astro';
+import HtmlIcon from '../icons/HtmlIcon.astro';
+import JavaScriptIcon from '../icons/JavaScriptIcon.astro';
+import MongoDbIcon from '../icons/MongoDbIcon.astro';
+import NodeJsIcon from '../icons/NodeJsIcon.astro';
+import RapidApiIcon from '../icons/RapidApiIcon.astro';
+import ReactIcon from '../icons/ReactIcon.astro';
+import ReduxIcon from '../icons/ReduxIcon.astro';
+import RxJsIcon from '../icons/RxJsIcon.astro';
+import SocketIoIcon from '../icons/SocketIoIcon.astro';
+import VueIcon from '../icons/VueIcon.astro';
+
+const TAGS = {
+  REACT: {
+    name: 'React',
+    class: 'text-[#0accef]',
+    icon: ReactIcon,
+  },
+  NODEJS: {
+    name: 'Node.js',
+    class: 'text-[#549846]',
+    icon: NodeJsIcon,
+  },
+  EXPRESS: {
+    name: 'Express',
+    class: 'text-[#efefef]',
+    icon: ExpressIcon,
+  },
+  MONGODB: {
+    name: 'MongoDB',
+    class: 'text-[#0add63]',
+    icon: MongoDbIcon,
+  },
+  REDUX: {
+    name: 'Redux',
+    class: 'text-[#744cb2]',
+    icon: ReduxIcon,
+  },
+  ANGULAR: {
+    name: 'Angular',
+    class: 'text-[#ee36c6]',
+    icon: AngularIcon,
+  },
+  FIREBASE: {
+    name: 'Firebase',
+    class: 'text-[#ecbf42]',
+    icon: FirebaseIcon,
+  },
+  RXJS: {
+    name: 'RxJS',
+    class: 'text-[#d22480]',
+    icon: RxJsIcon,
+  },
+  SOCKETIO: {
+    name: 'Socket.io',
+    class: 'text-white',
+    icon: SocketIoIcon,
+  },
+  HTML: {
+    name: 'HTML',
+    class: 'text-[#e0642f]',
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: 'CSS',
+    class: 'text-[#35a2d0]',
+    icon: CssIcon,
+  },
+  JAVASCRIPT: {
+    name: 'JavaScript',
+    class: 'text-[#e2cf51]',
+    icon: JavaScriptIcon,
+  },
+  VUE: {
+    name: 'Vue.js',
+    class: 'text-[#44af7f]',
+    icon: VueIcon,
+  },
+  RAPIDAPI: {
+    name: 'Rapid API',
+    class: 'text-[#efefef]',
+    icon: RapidApiIcon,
+  },
+  AXIOS: {
+    name: 'Axios',
+    class: 'text-[#0a99e0]',
+    icon: AxiosIcon,
+  },
+} as const;
+
+const PROJECTS = [
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      'Developed a full-stack e-commerce platform with user authentication, product management, and secure checkout functionality.',
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/img/svgl.webp',
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB, TAGS.REDUX],
+  },
+  {
+    title: 'Task Management App',
+    description:
+      'Built a task management application with features like task creation, assignment, and progress tracking for efficient project management.',
+    link: 'https://example-task-app.com',
+    github: 'https://github.com/username/task-management-app',
+    image: 'https://picsum.photos/1280/720',
+    tags: [TAGS.ANGULAR, TAGS.FIREBASE, TAGS.RXJS],
+  },
+  {
+    title: 'Real-Time Chat Application',
+    description:
+      'Designed and implemented a real-time chat application with WebSocket technology, allowing users to communicate instantly.',
+    link: 'https://example-chat-app.com',
+    github: 'https://github.com/username/chat-app',
+    image: 'https://picsum.photos/1280/720',
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SOCKETIO, TAGS.MONGODB],
+  },
+  {
+    title: 'Portfolio Website',
+    description:
+      'Created a personal portfolio website to showcase skills, experience, and projects with a modern and responsive design.',
+    link: 'https://example-portfolio.com',
+    github: 'https://github.com/username/portfolio-website',
+    image: 'https://picsum.photos/1280/720',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.REACT],
+  },
+  {
+    title: 'Weather App',
+    description:
+      'Developed a weather application that fetches real-time weather data based on user input and displays it in a user-friendly interface.',
+    link: 'https://example-weather-app.com',
+    github: 'https://github.com/username/weather-app',
+    image: 'https://picsum.photos/1280/720',
+    tags: [TAGS.VUE, TAGS.RAPIDAPI, TAGS.CSS, TAGS.AXIOS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-sm border border-white/10 bg-white/5 ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10 mt-4"
+        src={image}
+        alt={`Screenshot of project ${title}`}
+      />
+    </article>
+  ))
+}

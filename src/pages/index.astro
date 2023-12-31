@@ -1,10 +1,82 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../icons/LinkedInIcon.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import SocialPill from '../components/SocialPill.astro';
+import MailIcon from '../icons/MailIcon.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import BriefcaseIcon from '../icons/BriefcaseIcon.astro';
+import CodeIcon from '../icons/CodeIcon.astro';
+import Projects from '../components/Projects.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Portfolio</h1>
+<Layout
+  title="Midudev Portfolio - Web Developer with 15 years of experience"
+  description="Hire midudev to create your web or mobile app. Web Developer and Content Creator. Specialized in creating unique apps."
+>
+  <main class="px-4">
+    <SectionContainer class="pt-32 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://avatars.githubusercontent.com/u/1561955?v=4"
+        alt="midudev photo"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, I'm midudev <a
+          href="https://www.linkedin.com/in/midudev"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Available to work</Badge>
+        </a>
+      </h1>
+
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>+15 years of experience.</span>
+        <span class="text-yellow-200/90">
+          Web Developer and Content Creator.
+        </span>
+        <span class="text-red-200/90"> From Barcelona, Spain.</span>
+        <span class="opacity-75">Specialized in creating unique apps.</span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/midudev">
+          <LinkedInIcon class="size-4 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/midudev">
+          <GitHubIcon class="size-4 md:size-6" />
+           GitHub
+        </SocialPill>
+        <SocialPill href="mailto:miduga@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+           miduga@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+         Work experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects" class:list={['mt-24']}>
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+         Projects
+      </h2>
+      <div class="flex flex-col gap-16">
+        <Projects />
+      </div>
+    </SectionContainer>
   </main>
 </Layout>
